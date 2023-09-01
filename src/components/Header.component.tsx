@@ -1,9 +1,21 @@
-import React from 'react'
 
 type Props = {}
 
 export const Header = (props: Props) => {
+
   return (
-    <div className='h-[20%] bg-mobile'>Header.component</div>
+    <div className='h-[45%] bg-mobile bg-cover flex flex-col items-center p-8 gap-y-4 z-10'>
+      <p className='text-white text-3xl font-medium mb-2'>IP Address Tracker</p>
+      <div className='flex w-full'>
+        <input className='w-[81%] h-14 rounded-l-2xl p-3 text-input focus:outline-none'
+          placeholder='Search for any ID address or domain'></input>
+        <button className='w-[19%] bg-veryDarkGray text-white rounded-r-2xl h-14 flex items-center justify-center'>
+          <img
+            src={"/icon/icon-arrow.svg"}
+            alt="Arrow Icon"
+          />
+        </button>
+      </div>      
+    </div>
   )
 }
