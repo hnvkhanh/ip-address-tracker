@@ -1,8 +1,9 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 
 type Props = {}
 
-const returnedObject = {
+let returnedObject = {
   "ip": "8.8.8.8",
   "location": {
     "country": "US",
@@ -28,6 +29,17 @@ const returnedObject = {
 
 export const Result = (props: Props) => {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
+  const apiKey = import.meta.env.VITE_APP_API_KEY;  
+  // const apiUrl = `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}&ipAddress=192.212.174.101`;
+  // let returnedObject;
+  // axios.get(apiUrl)
+  //   .then((response) => {
+  //     returnedObject = response.data;
+  //     console.log(returnedObject)
+  //   })
+  //   .catch((error) => {
+  //     console.error('There was a problem with the GET request:', error);
+  //   });
 
   useEffect(() => {
     const updateScreenHeight = () => {
@@ -38,8 +50,9 @@ export const Result = (props: Props) => {
       window.removeEventListener('resize', updateScreenHeight);
     };
   }, []);
+
   return (
-    <div className={`h-[300px] w-[85%] mt-[${screenHeight < 800 ? '28vh' : '20%'}] bg-white rounded-2xl absolute z-10 flex flex-col items-center gap-y-4 p-7`}>
+    <div className={`h-[300px] w-[85%] mt-[${screenHeight < 800 ? '28vh' : '20%'}]bg-white rounded-2xl absolute z-10 flex flex-col items-center gap-y-4 p-7`}>
       <div className='flex flex-col items-center font-bold'>
         <p className='text-darkGray text-xs'>IP ADDRESS</p>
         <h1 className='text-2xl '>{returnedObject.ip}</h1>

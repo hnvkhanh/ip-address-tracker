@@ -6,7 +6,7 @@ type Props = {}
 
 export const MainLayout = (props: Props) => {
   return (
-    <div className="font-rubik flex flex-col h-[100vh] overflow-scroll">
+    <div className="font-rubik flex flex-col h-[100vh]">
       <Header />
       <div className="flex justify-center items-center">
         <Result />
