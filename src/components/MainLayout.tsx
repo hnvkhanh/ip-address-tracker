@@ -10,11 +10,12 @@ export const MainLayout = (props: Props) => {
     lat: 51.505,
     long: -0.09
   })
+  const [ip, setIp] = useState('')
   return (
     <div className="font-rubik flex flex-col h-[100vh]">
-      <Header />
+      <Header setIp={setIp}/>
       <div className="flex justify-center items-center">
-        <Result setCoordinate={setCoordinate}/>
+        <Result setCoordinate={setCoordinate} ip={ip}/>
       </div>
       <Map coordinate={coordinate} />
     </div>

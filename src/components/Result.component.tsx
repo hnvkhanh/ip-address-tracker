@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { ChangeView, Coordinate } from './Map.component';
 
 type Props = {
+  ip: string,
   setCoordinate: React.Dispatch<React.SetStateAction<Coordinate>>
 }
 
@@ -39,21 +40,23 @@ export const Result = (props: Props) => {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
   const [geo, setGeo] = useState(returnedObject)
   const apiKey = import.meta.env.VITE_APP_API_KEY;
-  const apiUrl = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=192.212.174.101`;
-  const handleClick = () => {
-    axios.get(apiUrl)
-      .then((response) => {
-        setGeo(response.data);
-        props.setCoordinate({
-          lat: response.data.location.lat,
-          long: response.data.location.lng
-        })       
-      })
-      .catch((error) => {
-        console.error('There was a problem with the GET request:', error);
-      });
-   
-  }
+  const apiUrl = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${props.ip}`;
+  useEffect(() => {
+    if (props.ip.length != 0) {
+      console.log("Call API")
+      // axios.get(apiUrl)
+      //   .then((response) => {
+      //     setGeo(response.data);
+      //     props.setCoordinate({
+      //       lat: response.data.location.lat,
+      //       long: response.data.location.lng
+      //     })
+      //   })
+      //   .catch((error) => {
+      //     console.error('There was a problem with the GET request:', error);
+      //   });
+    }
+  }, [props.ip])
 
   useEffect(() => {
     const updateScreenHeight = () => {
@@ -68,7 +71,7 @@ export const Result = (props: Props) => {
   return (
     <div className={`h-fit w-[85%] mt-[${screenHeight < 800 ? '30vh' : '30%'}] text-center bg-white rounded-2xl absolute z-10 flex flex-col items-center gap-y-4 p-7`}>
       <div className='flex flex-col items-center font-bold'>
-        <p onClick={handleClick} className='text-darkGray text-xs'>IP ADDRESS</p>
+        <p className='text-darkGray text-xs'>IP ADDRESS</p>
         <h1 className='text-2xl '>{geo.ip}</h1>
       </div>
       <div className='flex flex-col items-center font-bold'>

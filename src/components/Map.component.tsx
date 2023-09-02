@@ -13,10 +13,7 @@ export type Coordinate = {
   long: number
 }
 
-export function ChangeView(props:Props) {
-  // const map = useMapEvent('click', () => {
-  //   map.setView([props.coordinate.lat, props.coordinate.long], map.getZoom())
-  // })
+export function ChangeView(props:Props) {  
   const map = useMap()
   map.setView([props.coordinate.lat, props.coordinate.long], map.getZoom())
   return null
