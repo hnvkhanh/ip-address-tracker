@@ -69,20 +69,22 @@ export const Result = (props: Props) => {
   }, []);
 
   return (
-    <div className={`h-fit w-[85%] mt-[${screenHeight < 800 ? '30vh' : '30%'}] text-center bg-white rounded-2xl absolute z-10 flex flex-col items-center gap-y-4 p-7`}>
-      <div className='flex flex-col items-center font-bold'>
+    <div className={`h-fit w-[85%] lg:w-[75vw] mt-[${screenHeight < 800 ? '30vh' : '30%'}] lg:mt-[10vh]
+                      text-center bg-white rounded-2xl absolute z-10 flex flex-col 
+                      lg:flex-row lg:gap-8 lg:px-20 justify-evenly items-center lg:items-start gap-y-4 p-7`}>
+      <div className='flex flex-col items-center font-bold lg:items-start lg:basis-1/4 lg:gap-4'>
         <p className='text-darkGray text-xs'>IP ADDRESS</p>
         <h1 className='text-2xl '>{geo.ip}</h1>
       </div>
-      <div className='flex flex-col items-center font-bold'>
+      <div className='flex flex-col items-center font-bold lg:items-start lg:justify-start lg:basis-1/4 lg:gap-4'>
         <p className='text-darkGray text-xs'>LOCATION</p>
-        <h1 className='text-2xl'>{`${geo.location.city}, ${geo.location.region}, ${geo.location.country} ${geo.location.postalCode}`}</h1>
+        <h1 className='text-2xl lg:text-left'>{`${geo.location.city}, ${geo.location.region}, ${geo.location.country} ${geo.location.postalCode}`}</h1>
       </div>
-      <div className='flex flex-col items-center font-bold'>
+      <div className='flex flex-col items-center font-bold lg:items-start lg:basis-1/4 lg:gap-4'>
         <p className='text-darkGray text-xs'>TIMEZONE</p>
-        <h1 className='text-2xl '>{`UTC ${geo.location.timezone}`}</h1>
+        <h1 className='text-2xl'>{`UTC ${geo.location.timezone}`}</h1>
       </div>
-      <div className='flex flex-col items-center font-bold'>
+      <div className='flex flex-col items-center font-bold lg:items-start lg:basis-1/4 lg:gap-4'>
         <p className='text-darkGray text-xs'>ISP</p>
         <h1 className='text-2xl '>{geo.isp}</h1>
       </div>
