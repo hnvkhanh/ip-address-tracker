@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { ChangeView, Coordinate } from './Map.component';
+import { Coordinate } from './Map.component';
+import axios from 'axios';
 
 type Props = {
   ip: string,

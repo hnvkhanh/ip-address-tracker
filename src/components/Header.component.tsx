@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction, useState } from "react"
 
-type Props = {  
+type Props = {
   setIp: Dispatch<SetStateAction<string>>
 }
 
 export const Header = (props: Props) => {
   const [inputValue, setInputValue] = useState('');
   const handleClick = () => {
-   props.setIp(inputValue);
+    props.setIp(inputValue);
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

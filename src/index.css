@@ -7,7 +7,7 @@
 @layer base {
   :root {
     --color-very-dark-gray: 0, 0%, 17%;
-    --color-dark-gray: 0, 0%, 59%;
+    --color-dark-gray: 0, 0%, 59%;    
   }
 }
 
