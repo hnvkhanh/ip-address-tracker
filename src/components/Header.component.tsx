@@ -16,7 +16,7 @@ export const Header = (props: Props) => {
 
 
   return (
-    <div className='h-[45%] bg-mobile bg-cover flex flex-col items-center p-8 gap-y-4 z-10'>
+    <div className='h-[45%] bg-mobile md:bg-desktop bg-cover flex flex-col items-center p-8 gap-y-4 z-10'>
       <p className='text-white text-3xl font-medium mb-2'>IP Address Tracker</p>
       <div className='flex w-full justify-center'>
         <input className='w-[81%] h-14 rounded-l-2xl p-3 text-input focus:outline-none lg:w-[25vw] lg:min-w-[400px]'

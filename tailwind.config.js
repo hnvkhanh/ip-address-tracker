@@ -14,8 +14,8 @@ export default {
         input: "18px",
       },
       backgroundImage: {
-        'mobile': "url('/bg/pattern-bg-mobile.png')",
-        'desktop': "url('/bg/pattern-bg-mobile.png')",
+        'mobile': "url('./src/assets/bg/pattern-bg-mobile.png')",
+        'desktop': "url('./src/assets/bg/pattern-bg-desktop.png')",
       }
     },
   },

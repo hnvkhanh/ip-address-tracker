@@ -1,6 +1,7 @@
 import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
+import markerIcon from '../assets/icon/icon-location.svg'
 
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 }
 
 var customMarkerIcon = new Icon({
-  iconUrl: './images/icon-location.svg',
+  iconUrl: markerIcon,
 });
 
 export type Coordinate = {
