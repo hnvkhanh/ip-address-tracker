@@ -44,17 +44,17 @@ export const Result = (props: Props) => {
   useEffect(() => {
     if (props.ip.length != 0) {
       console.log("Call API")
-      // axios.get(apiUrl)
-      //   .then((response) => {
-      //     setGeo(response.data);
-      //     props.setCoordinate({
-      //       lat: response.data.location.lat,
-      //       long: response.data.location.lng
-      //     })
-      //   })
-      //   .catch((error) => {
-      //     console.error('There was a problem with the GET request:', error);
-      //   });
+      axios.get(apiUrl)
+        .then((response) => {
+          setGeo(response.data);
+          props.setCoordinate({
+            lat: response.data.location.lat,
+            long: response.data.location.lng
+          })
+        })
+        .catch((error) => {
+          console.error('There was a problem with the GET request:', error);
+        });
     }
   }, [props.ip])
 
