@@ -3,9 +3,7 @@ import { Header } from "./Header.component"
 import { Coordinate, Map } from "./Map.component"
 import { Result } from "./Result.component"
 
-type Props = {}
-
-export const MainLayout = (props: Props) => {
+export const MainLayout = () => {
   const [coordinate, setCoordinate] = useState<Coordinate>({
     lat: 51.505,
     long: -0.09
